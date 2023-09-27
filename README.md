@@ -1,6 +1,6 @@
 ![](https://i.imgur.com/xG74tOh.png)
 # Este projeto foi desenvolvido como Desafio de Backend, proposto pela [Cubos Academy](https://cubos.academy).
-Esta é uma **API** desenvolvida com o objeivo de implementao à um consultório médico um sistema que seja capaz de realizar algumas tarefas básicas como:
+Esta é uma **API** que visa agilizar e facilitar os processos de atendimentos de pacientes e foi desenvolvida com o objetivo de implementar à um consultório médico um sistema que seja capaz de realizar algumas tarefas básicas como:
 
 - Mostrar uma listagem de consultas e marcá-las como finalizadas ou não;
 - Inserir ou deletar uma consulta ainda não finalizada;
@@ -24,11 +24,11 @@ Por ser uma API REST, este projeto utiliza o padrão de operações CRUD (Create
 
 ### Listar todas as consultas cadastradas
 
-Para listar as consultas já registradas no sistema, ultilize a GET ```/consultas``` e insira o CNES e a senha do consultório, passando os parâmetros como no exemplo abaixo:
+Para listar as consultas já registradas no sistema, ultilize a GET ```/consultas``` e insira o CNES e a senha do consultório, passando os parâmetros de consulta como no exemplo abaixo:
 
 ![imagem de exemplo get/consultas](https://github.com/micael-marins/projeto-consultorio-medico-desafio-m02/blob/main/imagens/get%20consultas.png)
 
-*Deverá ser retornado a listagem das consultas registradas. Caso haja algum erro, será impresso na tela. Lembre-se de usar os parâmetros como no exemplo acima.*
+*Deverá ser retornado a listagem das consultas registradas. Caso haja algum erro, será impresso na tela. Lembre-se de usar os parâmetros de consulta como no exemplo acima.*
 
 ---
 
@@ -78,3 +78,31 @@ Para deletar uma consulta, use o DELETE ```consulta/idConsulta```. Assim como no
 Para "dar baixa" em uma consulta (fazer a finalização), use o POST ```/consulta/finalizar```. No corpo da requisição (body), deverá conter um objeto JSON contendo o identificador da consulta e também o laudo gerado pelo profissional. O laudo precisa ter até 200 (duzentos) caracteres. Veja no exemplo abaixo a forma correta de atualizar uma consulta:
 
 ![imagem de exemplo post/consulta/finalizar](https://github.com/micael-marins/projeto-consultorio-medico-desafio-m02/blob/main/imagens/post%20finalizar.png)
+
+---
+
+### Consultar um laudo
+
+Para verificar um laudo postado pelo profissional, será necessário ultilizar o GET ```/consulta/laudo``` e inserir - como parâmetros de consulta - o numero identificador da consulta e a senha do paciente desta mesma consulta. Uma vez que todos os dados informados estejam corretos e a consulta esteja atualizada como "finalizada", será impresso na tela o laudo do profissional, como no exemplo a seguir:
+
+![imagem de exemplo get/consulta/laudo](https://github.com/micael-marins/projeto-consultorio-medico-desafio-m02/blob/main/imagens/get%20laudo.png)
+
+*Lembre-se que os parâmetros de consulta devem ser passados com os mesmos nomes usados no exemplo.*
+
+---
+
+### Atendimentos finalizados de um profissional
+
+Esta última função permite verificar quais as consultas registradas como "finalizadas" de um profissional específico. Para acessar, deve-se utilizar o GET 
+```/consultas/medico``` e passar como parâmetro de consulta o número identificador do profissional. Uma outra forma é usar a URL ```/consultas/medico?identificador_medico=0``` onde ```identificador_medico``` é o parâmetro e o "0" representa o número de identificação. Veja mais detalhadamente no exemplo abaixo:
+
+![imagem de exemplo get/consultas/medico](https://github.com/micael-marins/projeto-consultorio-medico-desafio-m02/blob/main/imagens/get%20medicos.png)
+
+---
+### Se você acredita que este projeto irá ajudar em seu consultório, fique à vontade para usar e fazer suas alterações. Ainda não está concluído e, por isso ainda possui poucas funcionalidades.
+
+# OBRIGADO por acompanhar até aqui! Siga me no [LinkedIn](https://www.linkedin.com/in/micael-marins/)!
+
+
+
+
